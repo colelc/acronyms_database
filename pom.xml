@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>edu.duke.fuqua</groupId>
+  <artifactId>acronym_data_utils</artifactId>
+  <version>2.0</version>
+  <packaging>war</packaging>
+  <name>Fuqua Acronym Data Utils</name>
+  <description>Fuqua Acronym Data Utils</description>
+  
+  
+	<properties>
+         <maven.compiler.source>1.8</maven.compiler.source>
+         <maven.compiler.target>1.8</maven.compiler.target>
+         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
+         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+         <failOnMissingWebXml>false</failOnMissingWebXml>
+    </properties>  
+
+
+	<dependencies>
+	
+		<dependency>
+		    <groupId>org.apache.logging.log4j</groupId>
+		    <artifactId>log4j-core</artifactId>
+		    <version>2.11.1</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>log4j</groupId>
+		    <artifactId>log4j</artifactId>
+		    <version>1.2.17</version>
+		</dependency>
+		
+		<!-- needed for Apache POI -->
+	    <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.17.2</version>
+        </dependency>
+		
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.9.1</version>
+		</dependency>
+    
+    <dependency>
+    	<groupId>com.unboundid</groupId>
+        <artifactId>unboundid-ldapsdk</artifactId>
+        <version>6.0.6</version>
+        <scope>provided</scope>
+    </dependency>
+    		
+		<dependency>
+	      <groupId>org.postgresql</groupId>
+	      <artifactId>postgresql</artifactId>
+	      <!--<version>42.2.12.jre7</version>  for Duke artifactory-->
+	      <version>42.6.0</version> <!-- for local development -->
+	      <!--<type>jar</type>-->
+		</dependency>
+		
+		<dependency> 
+		  <groupId>org.apache.poi</groupId>
+		  <artifactId>poi</artifactId> 
+		  <version>5.2.0</version> 
+		</dependency> 
+		<dependency> 
+		  <groupId>org.apache.poi</groupId> 
+		  <artifactId>poi-ooxml</artifactId> 
+		  <version>5.2.0</version> 
+		</dependency>
+			
+    <dependency>
+        <groupId>com.thetransactioncompany</groupId>
+        <artifactId>cors-filter</artifactId>
+        <version>1.5.1</version>
+    </dependency> 
+ 
+				
+	</dependencies>
+
+  <build>
+	<sourceDirectory>src/main/java</sourceDirectory>
+
+  	<plugins>
+           <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+           </plugin>
+           <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.2</version>
+                <configuration>
+                    <failOnMissingWebXml>${failOnMissingWebXml}</failOnMissingWebXml>
+                    	<webResources>
+						<!--<resource>
+							<directory>node_modules</directory>
+							<targetPath>node_modules</targetPath>
+						</resource> -->
+						<resource>
+							<directory>src/main/webapp/resources</directory>
+						</resource>
+					</webResources>
+                </configuration>
+            </plugin>
+    </plugins>
+  </build>	 
+
+</project>

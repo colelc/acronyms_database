@@ -1,0 +1,76 @@
+##------------------------------------------------------------------------------------------------------------------
+ENV=d
+##  Environments: d=dev, s=stage, p=prod
+##  Set the ENV value.  The back-end code evaluates the ENV value and chooses the environment-appropriate selection.
+##
+##  EXAMPLE:
+##  If ENV=p, ConfigUtils.getProperty("home.page.url") will return the property value for ("p.home.page.url").
+##  If ENV=s, ConfigUtils.getProperty("home.page.url") will return the property value for ("s.home.page.url").
+##  If ENV=d, ConfigUtils.getProperty("home.page.url") will return the property value for ("d.home.page.url").
+##
+##  IF the ENV value is not incorporated into a key, the key/value pair will be used across all environments.
+##------------------------------------------------------------------------------------------------------------------
+d.env=d
+s.env=s
+p.env=p
+##
+##### POSTGRES
+d.postgres.driver=org.postgresql.Driver
+s.postgres.driver=org.postgresql.Driver
+p.postgres.driver=org.postgresql.Driver
+#
+## POSTGRES DEV environment
+d.postgres.url=jdbc:postgresql://cruella.fuqua.duke.edu:5432/toolsdb
+d.postgres.username=toolsuser
+d.postgres.password=***************
+#
+## POSTGRES STAGING environment
+s.postgres.url=jdbc:postgresql://syndrome.fuqua.duke.edu:5432/toolsdb
+s.postgres.username=toolsuser
+s.postgres.password=***************
+#
+# POSTGRES PRODUCTION environment
+p.postgres.url=jdbc:postgresql://ursula.fuqua.duke.edu:5432/toolsdb
+p.postgres.username=toolsuser
+p.postgres.password=***************
+#
+#
+# Database name for the tables
+d.db.name=public
+s.db.name=public
+p.db.name=public
+#
+#
+# table names of interest
+table.name.fuqua.acronyms=fuqua_acronyms
+table.name.fuqua.acronym.tags=fuqua_acronym_tags
+table.name.fuqua.acronym.tag.map=fuqua_acronym_tag_map
+table.name.fuqua.acronym.permissions=fuqua_acronym_permissions
+#
+#
+##------------------------------------------------------------------------------------------------------------------
+### DDL for POSTGRES database
+d.postgres.ddl.directory=/home/linda/eclipse-workspace/acronym_data_utils/src/main/resources/data/db/ddl
+s.postgres.ddl.directory=/home/linda/eclipse-workspace/acronym_data_utils/src/main/resources/data/db/ddl
+p.postgres.ddl.directory=/home/linda/eclipse-workspace/acronym_data_utils/src/main/resources/data/db/ddl
+#
+##------------------------------------------------------------------------------------------------------------------
+##
+## DIRECTORY for acronym csv file
+d.acronym.excel.directory=/home/linda/eclipse-workspace/acronym_data_utils/src/main/resources/data
+s.acronym.excel.directory=/home/linda/eclipse-workspace/acronym_data_utils/src/main/resources/data
+p.acronym.excel.directory=/home/linda/eclipse-workspace/acronym_data_utils/src/main/resources/data
+#
+d.acronym.excel.csv.file=AcronymsGlossary.csv
+s.acronym.excel.csv.file=AcronymsGlossary.csv
+p.acronym.excel.csv.file=AcronymsGlossary.csv
+##
+headers.csv=ACRONYM,REFERS TO,DEFINITION,Area Key
+headers.postgres=acronym,refers_to,definition,area_key
+##
+data.type.string=string
+data.type.float=float
+data.type.integer=integer
+data.type.none=none
+#
+data.is.na=NA
