@@ -10,13 +10,10 @@ public class TestingUtils {
 		try {
 			DdlUtils.deleteRedefinePostgresqlTables();
 
-			// historical
-			// populateCaseRec();
-			// populateTemplateData();
-			// populateStudentData();
-
 			// new case
 			AcronymUtils.loadAcronymData();
+
+			AcronymUtils.loadAcronymTags();
 
 			// QueryUtils.queryTests();
 

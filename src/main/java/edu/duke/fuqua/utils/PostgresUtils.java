@@ -13,6 +13,7 @@ import edu.duke.fuqua.db.CreateService;
 import edu.duke.fuqua.db.ReadService;
 import edu.duke.fuqua.db.UpdateService;
 import edu.duke.fuqua.vo.ExcelAcronym;
+import edu.duke.fuqua.vo.Tag;
 
 public class PostgresUtils {
 
@@ -51,12 +52,12 @@ public class PostgresUtils {
 		}
 	}
 
-	public List<ExcelAcronym> queryRecCase(Connection connection, Integer id) throws Exception {
+	public List<ExcelAcronym> queryFuquaAcronyms(Connection connection, Integer id) throws Exception {
 
 		List<ExcelAcronym> returnList = new ArrayList<>();
 
 		try {
-			String sql = "SELECT a.id, a.acronym, a.refers_to, a.definition, a.area_key, a.active FROM " + DdlUtils.dbName("rec_case") + " c ";
+			String sql = "SELECT a.id, a.acronym, a.refers_to, a.definition, a.area_key, a.active FROM " + DdlUtils.dbName("fuqua_acronyms") + " a ";
 			if (id != null) {
 				sql += " WHERE a.id = " + id.toString() + " ";
 			}
@@ -71,6 +72,29 @@ public class PostgresUtils {
 						rs.getString("area_key")/**/
 				);
 				returnList.add(ea);
+			}
+		} catch (Exception e) {
+			throw e;
+		}
+		return returnList;
+	}
+
+	public List<Tag> queryFuquaAcronymTags(Connection connection, Integer id) throws Exception {
+
+		List<Tag> returnList = new ArrayList<>();
+
+		try {
+			String sql = "SELECT at.id, at.name, at.active FROM " + DdlUtils.dbName("fuqua_acronym_tags") + " at ";
+			if (id != null) {
+				sql += " WHERE at.id = " + id.toString() + " ";
+			}
+
+			// log.info(sql);
+			ResultSet rs = new ReadService().doQuery(connection, sql);
+			while (rs.next()) {
+				Tag tag = new Tag(rs.getInt("id"), rs.getString("name"), rs.getBoolean("active"));
+
+				returnList.add(tag);
 			}
 		} catch (Exception e) {
 			throw e;
@@ -162,6 +186,31 @@ public class PostgresUtils {
 		}
 	}
 
+	public Integer populateFuquaAcronymTag(Connection connection, String tableName, List<String> columnNamesList, String tag) throws Exception {
+		try {
+			String sql = "INSERT INTO " + getDbName() + "." + tableName + " "/**/
+					+ " (" + columnNamesList.stream().collect(Collectors.joining(", ")) + " ) " /**/
+					+ " VALUES " /**/
+					+ " (" + columnNamesList.stream().map(m -> "?").collect(Collectors.joining(", ")) + " ) " /**/
+					+ " RETURNING id "/**/
+					+ "; ";
+
+			CreateService service = new CreateService();
+
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setString(1, tag);
+			ps.setBoolean(2, true);
+			ps.setString(3, "postgres"); // created_by
+			ps.setString(4, null); // deleted_by
+			ps.setTimestamp(5, null); // deleted
+
+			Integer id = service.insert(connection, ps);
+			return id;
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+
 //	public Integer populateRecValue(Connection connection, String tableName, List<String> columnNamesList, TemplateValue data) throws Exception {
 //		try {
 //			String sql = "INSERT INTO " + getDbName() + "." + tableName + " "/**/
@@ -184,34 +233,6 @@ public class PostgresUtils {
 //			ps.setTimestamp(7, null);
 //
 //			// log.info("Inserting to rec_value: " + data.toString());
-//			Integer id = service.insert(connection, ps);
-//			return id;
-//		} catch (Exception e) {
-//			throw e;
-//		}
-//	}
-
-//	public Integer populateRecPValue(Connection connection, String tableName, List<String> columnNamesList, PValue data) throws Exception {
-//		try {
-//			String sql = "INSERT INTO " + getDbName() + "." + tableName + " "/**/
-//					+ " (" + columnNamesList.stream().collect(Collectors.joining(", ")) + " ) " /**/
-//					+ " VALUES " /**/
-//					+ " (" + columnNamesList.stream().map(m -> "?").collect(Collectors.joining(", ")) + " ) " /**/
-//					+ " RETURNING id "/**/
-//					+ "; ";
-//
-//			// log.info(sql);
-//			CreateService service = new CreateService();
-//
-//			PreparedStatement ps = connection.prepareStatement(sql);
-//			ps.setInt(1, data.getCaseId());
-//			ps.setInt(2, data.getSequenceNumber());
-//			ps.setInt(3, data.getpValue());
-//			ps.setString(4, "postgres");
-//			ps.setString(5, null);
-//			ps.setTimestamp(6, null);
-//
-//			// log.info("Inserting to rec_p_value: " + data.toString());
 //			Integer id = service.insert(connection, ps);
 //			return id;
 //		} catch (Exception e) {
