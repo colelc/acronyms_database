@@ -84,7 +84,7 @@ public class DdlUtils {
 	public static List<String> getTableColumns(Connection connection, String tableName) throws Exception {
 		try {
 			List<String> columnNamesList = new ReadService().getColumnsInTable(connection, tableName);
-			columnNamesList = columnNamesList.stream().filter(f -> f.compareTo("id") != 0 && f.compareTo("created") != 0).collect(Collectors.toList());
+			columnNamesList = columnNamesList.stream().filter(f -> f.compareTo("id") != 0 && f.compareTo("created") != 0 && f.compareTo("last_updated") != 0).collect(Collectors.toList());
 			return columnNamesList;
 		} catch (Exception e) {
 			throw e;

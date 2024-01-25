@@ -6,8 +6,8 @@ create table
     active BOOLEAN NOT NULL default TRUE,
     created_by VARCHAR(255) NOT NULL,
     created timestamp NOT NULL default NOW(),
-    deleted_by VARCHAR(255) NULL,
-    deleted TIMESTAMP NULL,
+    last_updated_by VARCHAR(255) NOT NULL,
+    last_updated TIMESTAMP NOT NULL default NOW(),
     
     PRIMARY KEY(id),
     CONSTRAINT fk_fuqua_acronyms_acronym_id   FOREIGN KEY(acronym_id) REFERENCES public.fuqua_acronyms(id),
