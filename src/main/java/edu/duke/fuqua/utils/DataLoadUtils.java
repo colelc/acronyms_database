@@ -10,14 +10,13 @@ public class DataLoadUtils {
 		try {
 			DdlUtils.deleteRedefinePostgresqlTables();
 
-			// new case
 			AcronymUtils.loadAcronymData();
 
 			AcronymUtils.loadAcronymTags();
 
 			AcronymUtils.loadAcronymTagMap();
 
-			// QueryUtils.queryTests();
+			QueryUtils.queryTests();
 
 			log.info("DONE");
 		} catch (Exception e) {
