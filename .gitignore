@@ -4,3 +4,4 @@
 target/
 src/main/resources/app.properties
 bin/
+/modules/

@@ -11,7 +11,6 @@ import org.apache.log4j.Logger;
 
 import edu.duke.fuqua.db.CreateService;
 import edu.duke.fuqua.db.ReadService;
-import edu.duke.fuqua.db.UpdateService;
 import edu.duke.fuqua.vo.ExcelAcronym;
 import edu.duke.fuqua.vo.Tag;
 
@@ -27,29 +26,6 @@ public class PostgresUtils {
 			instance = new PostgresUtils();
 		}
 		return instance;
-	}
-
-	public void updateRecCase(Connection connection, Integer id, String columnName, String updateValue) throws Exception {
-		try {
-			String tableName = ConfigUtils.getProperty("table.name.rec.case");
-			List<String> columnNamesList = new ReadService().getColumnsInTable(connection, tableName);
-			columnNamesList = columnNamesList.stream().filter(f -> f.compareTo("id") != 0 && f.compareTo("created") != 0).collect(Collectors.toList());
-
-			String sql = "UPDATE " + getDbName() + "." + tableName + " "/**/
-					+ " SET " + columnName + " = ? " /**/
-					+ " WHERE id = ? " /**/
-					+ "; ";
-
-			// log.info(sql);
-
-			PreparedStatement ps = connection.prepareStatement(sql);
-			ps.setString(1, updateValue);
-			ps.setInt(2, id);
-
-			new UpdateService().update(connection, ps);
-		} catch (Exception e) {
-			throw e;
-		}
 	}
 
 	public List<ExcelAcronym> queryFuquaAcronyms(Connection connection, Integer id) throws Exception {
@@ -211,34 +187,31 @@ public class PostgresUtils {
 		}
 	}
 
-//	public Integer populateRecValue(Connection connection, String tableName, List<String> columnNamesList, TemplateValue data) throws Exception {
-//		try {
-//			String sql = "INSERT INTO " + getDbName() + "." + tableName + " "/**/
-//					+ " (" + columnNamesList.stream().collect(Collectors.joining(", ")) + " ) " /**/
-//					+ " VALUES " /**/
-//					+ " (" + columnNamesList.stream().map(m -> "?").collect(Collectors.joining(", ")) + " ) " /**/
-//					+ " RETURNING id "/**/
-//					+ "; ";
-//
-//			// log.info(sql);
-//			CreateService service = new CreateService();
-//
-//			PreparedStatement ps = connection.prepareStatement(sql);
-//			ps.setInt(1, data.getTemplateId());
-//			ps.setString(2, data.getDataValue());
-//			ps.setString(3, data.getDataType());
-//			ps.setBoolean(4, data.getPvalue());
-//			ps.setString(5, "postgres");
-//			ps.setString(6, null);
-//			ps.setTimestamp(7, null);
-//
-//			// log.info("Inserting to rec_value: " + data.toString());
-//			Integer id = service.insert(connection, ps);
-//			return id;
-//		} catch (Exception e) {
-//			throw e;
-//		}
-//	}
+	public Integer populateFuquaAcronymTagMap(Connection connection, String tableName, List<String> columnNamesList, Integer acronymId, Integer tagId) throws Exception {
+		try {
+			String sql = "INSERT INTO " + getDbName() + "." + tableName + " "/**/
+					+ " (" + columnNamesList.stream().collect(Collectors.joining(", ")) + " ) " /**/
+					+ " VALUES " /**/
+					+ " (" + columnNamesList.stream().map(m -> "?").collect(Collectors.joining(", ")) + " ) " /**/
+					+ " RETURNING id "/**/
+					+ "; ";
+
+			CreateService service = new CreateService();
+
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, acronymId);
+			ps.setInt(2, tagId);
+			ps.setBoolean(3, true);
+			ps.setString(4, "postgres"); // created_by
+			ps.setString(5, null); // deleted_by
+			ps.setTimestamp(6, null); // deleted
+
+			Integer id = service.insert(connection, ps);
+			return id;
+		} catch (Exception e) {
+			throw e;
+		}
+	}
 
 	public static String getDbName() {
 		try {

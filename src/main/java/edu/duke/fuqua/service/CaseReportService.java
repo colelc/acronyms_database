@@ -5,14 +5,14 @@ import java.util.Optional;
 
 import org.apache.log4j.Logger;
 
-import edu.duke.fuqua.utils.TestingUtils;
+import edu.duke.fuqua.utils.DataLoadUtils;
 import edu.duke.fuqua.vo.CaseReport;
 import edu.duke.fuqua.vo.thin.CaseReportLineItem;
 import edu.duke.fuqua.vo.thin.CaseReportThin;
 import edu.duke.fuqua.vo.thin.CaseThin;
 
 public class CaseReportService {
-	private static Logger log = Logger.getLogger(TestingUtils.class);
+	private static Logger log = Logger.getLogger(DataLoadUtils.class);
 
 	private static CaseReportService instance;
 

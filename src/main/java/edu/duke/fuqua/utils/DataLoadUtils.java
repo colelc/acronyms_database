@@ -2,9 +2,9 @@ package edu.duke.fuqua.utils;
 
 import org.apache.log4j.Logger;
 
-public class TestingUtils {
+public class DataLoadUtils {
 
-	private static Logger log = Logger.getLogger(TestingUtils.class);
+	private static Logger log = Logger.getLogger(DataLoadUtils.class);
 
 	public static void main(String[] args) {
 		try {
@@ -14,6 +14,8 @@ public class TestingUtils {
 			AcronymUtils.loadAcronymData();
 
 			AcronymUtils.loadAcronymTags();
+
+			AcronymUtils.loadAcronymTagMap();
 
 			// QueryUtils.queryTests();
 

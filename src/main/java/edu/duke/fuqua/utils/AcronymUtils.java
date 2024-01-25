@@ -12,6 +12,7 @@ import org.apache.log4j.Logger;
 
 import edu.duke.fuqua.db.ConnectionService;
 import edu.duke.fuqua.vo.ExcelAcronym;
+import edu.duke.fuqua.vo.Tag;
 
 public class AcronymUtils {
 
@@ -47,9 +48,20 @@ public class AcronymUtils {
 
 			for (int i = 0; i < tagList.size(); i++) {
 				String t = tagList.get(i);
-				if (t.contains("\r") || t.contains("\r\n") || t.contains("\n")) {
+				String splitter = "";
+				if (t.contains("\r\n")) {
+					splitter = "\r\n";
+				} else if (t.contains("\r")) {
+					splitter = "\r";
+				} else if (t.contains("\n")) {
+					splitter = "\n";
+				} else {
+					splitter = null;
+				}
+
+				if (splitter != null) {
 					splitterList.clear();
-					splitterList.addAll(Arrays.asList(t.split("\n")));
+					splitterList.addAll(Arrays.asList(t.split(splitter)));
 
 					for (String s : splitterList) {
 						copy.add(s);
@@ -68,6 +80,51 @@ public class AcronymUtils {
 		}
 	}
 
+	public static void loadAcronymTagMap() {
+		try {
+			Connection connection = ConnectionService.connect("postgres");
+			PostgresUtils service = new PostgresUtils();
+
+			List<ExcelAcronym> list = service.queryFuquaAcronyms(connection, null);
+			if (list == null || list.size() == 0) {
+				throw new Exception("No data in fuqua_acronyms table - cannot populate fuqua_acronym_tags table");
+			}
+
+			List<Tag> tagList = service.queryFuquaAcronymTags(connection, null);
+			if (tagList == null || tagList.size() == 0) {
+				throw new Exception("No data in fuqua_acronym_tags table - cannot populate fuqua_acronym_tag_map table");
+			}
+
+			String table = ConfigUtils.getProperty("table.name.fuqua.acronym.tag.map");
+			List<String> columnNames = DdlUtils.getTableColumns(connection, table);
+
+			for (ExcelAcronym a : list) {
+				if (a.getAcronym().trim().toLowerCase().compareTo("wic") == 0) {
+					continue;
+				}
+				Integer tagId = tagList.stream()/**/
+						.filter(f -> f.getName().trim().toLowerCase().compareTo(a.getAreaKey().trim().toLowerCase()) == 0)/**/
+						.map(m -> m.getId())/**/
+						.findFirst().get();
+
+				service.populateFuquaAcronymTagMap(connection, table, columnNames, a.getId(), tagId);
+			}
+
+			// now take care of WIC
+			Integer acronymId = list.stream().filter(f -> f.getAcronym().compareTo("WIC") == 0).map(m -> m.getId()).findFirst().get();
+			Integer hsmTagId = tagList.stream().filter(f -> f.getName().compareTo("HSM") == 0).map(m -> m.getId()).findFirst().get();
+			Integer mbaTagId = tagList.stream().filter(f -> f.getName().compareTo("MBA") == 0).map(m -> m.getId()).findFirst().get();
+			Integer mmsTagId = tagList.stream().filter(f -> f.getName().compareTo("MMS") == 0).map(m -> m.getId()).findFirst().get();
+
+			service.populateFuquaAcronymTagMap(connection, table, columnNames, acronymId, hsmTagId);
+			service.populateFuquaAcronymTagMap(connection, table, columnNames, acronymId, mbaTagId);
+			service.populateFuquaAcronymTagMap(connection, table, columnNames, acronymId, mmsTagId);
+		} catch (Exception e) {
+			log.error(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+
 	private static void populateFuquaAcronyms(List<Map<String, String>> csvList) throws Exception {
 		try {
 			Connection connection = ConnectionService.connect("postgres");
@@ -79,7 +136,7 @@ public class AcronymUtils {
 
 			// template data
 			for (Map<String, String> map : csvList) {
-				ExcelAcronym ea = new ExcelAcronym(map.get("ACRONYM"), map.get("REFERS TO"), map.get("DEFINITION"), map.get("Area Key"));
+				ExcelAcronym ea = new ExcelAcronym(map.get("ACRONYM").trim(), map.get("REFERS TO").trim(), map.get("DEFINITION").trim(), map.get("Area Key").trim());
 				Integer id = service.populateFuquaAcronyms(connection, table, columnNames, ea);
 			}
 
@@ -101,8 +158,7 @@ public class AcronymUtils {
 
 			// tags
 			for (String tag : tagList) {
-				log.info(tag);
-				Integer id = service.populateFuquaAcronymTag(connection, table, columnNames, tag);
+				Integer id = service.populateFuquaAcronymTag(connection, table, columnNames, tag.trim());
 			}
 
 		} catch (Exception e) {
