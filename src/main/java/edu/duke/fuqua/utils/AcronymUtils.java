@@ -99,9 +99,9 @@ public class AcronymUtils {
 			List<String> columnNames = DdlUtils.getTableColumns(connection, table);
 
 			for (ExcelAcronym a : list) {
-				if (a.getAcronym().trim().toLowerCase().compareTo("wic") == 0) {
-					continue;
-				}
+				// if (a.getAcronym().trim().toLowerCase().compareTo("wic") == 0) {
+				// continue;
+				// }
 				Integer tagId = tagList.stream()/**/
 						.filter(f -> f.getName().trim().toLowerCase().compareTo(a.getAreaKey().trim().toLowerCase()) == 0)/**/
 						.map(m -> m.getId())/**/
@@ -111,14 +111,14 @@ public class AcronymUtils {
 			}
 
 			// now take care of WIC
-			Integer acronymId = list.stream().filter(f -> f.getAcronym().compareTo("WIC") == 0).map(m -> m.getId()).findFirst().get();
-			Integer hsmTagId = tagList.stream().filter(f -> f.getName().compareTo("HSM") == 0).map(m -> m.getId()).findFirst().get();
-			Integer mbaTagId = tagList.stream().filter(f -> f.getName().compareTo("MBA") == 0).map(m -> m.getId()).findFirst().get();
-			Integer mmsTagId = tagList.stream().filter(f -> f.getName().compareTo("MMS") == 0).map(m -> m.getId()).findFirst().get();
-
-			service.populateFuquaAcronymTagMap(connection, table, columnNames, acronymId, hsmTagId);
-			service.populateFuquaAcronymTagMap(connection, table, columnNames, acronymId, mbaTagId);
-			service.populateFuquaAcronymTagMap(connection, table, columnNames, acronymId, mmsTagId);
+//			Integer acronymId = list.stream().filter(f -> f.getAcronym().compareTo("WIC") == 0).map(m -> m.getId()).findFirst().get();
+//			Integer hsmTagId = tagList.stream().filter(f -> f.getName().compareTo("HSM") == 0).map(m -> m.getId()).findFirst().get();
+//			Integer mbaTagId = tagList.stream().filter(f -> f.getName().compareTo("MBA") == 0).map(m -> m.getId()).findFirst().get();
+//			Integer mmsTagId = tagList.stream().filter(f -> f.getName().compareTo("MMS") == 0).map(m -> m.getId()).findFirst().get();
+//
+//			service.populateFuquaAcronymTagMap(connection, table, columnNames, acronymId, hsmTagId);
+//			service.populateFuquaAcronymTagMap(connection, table, columnNames, acronymId, mbaTagId);
+//			service.populateFuquaAcronymTagMap(connection, table, columnNames, acronymId, mmsTagId);
 		} catch (Exception e) {
 			log.error(e.getMessage());
 			e.printStackTrace();
