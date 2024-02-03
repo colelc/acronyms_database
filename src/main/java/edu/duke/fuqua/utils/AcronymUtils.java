@@ -125,6 +125,19 @@ public class AcronymUtils {
 		}
 	}
 
+	public static void updateTagString() {
+		try {
+			// String acronymDirectory = ConfigUtils.getProperty("acronym.excel.directory");
+			// String csvFile = acronymDirectory + File.separator + ConfigUtils.getProperty("acronym.excel.csv.file");
+			// List<Map<String, String>> csvList = ExcelUtils.csvToList(csvFile);
+
+			// populateFuquaAcronyms(csvList);
+		} catch (Exception e) {
+			log.error(e.getMessage());
+			e.printStackTrace();
+		}
+	}
+
 	private static void populateFuquaAcronyms(List<Map<String, String>> csvList) throws Exception {
 		try {
 			Connection connection = ConnectionService.connect("postgres");

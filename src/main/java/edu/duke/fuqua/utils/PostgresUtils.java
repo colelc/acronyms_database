@@ -120,9 +120,10 @@ public class PostgresUtils {
 			ps.setString(2, data.getRefersTo());
 			ps.setString(3, data.getDefinition());
 			ps.setString(4, data.getAreaKey());
-			ps.setBoolean(5, data.isActive());
-			ps.setString(6, "postgres"); // created_by
-			ps.setString(7, "postgres"); // last_updated_by
+			ps.setString(5, data.getAreaKey());
+			ps.setBoolean(6, data.isActive());
+			ps.setString(7, "postgres"); // created_by
+			ps.setString(8, "postgres"); // last_updated_by
 
 			// log.info("Inserting to rec_template: " + data.toString());
 			Integer id = service.insert(connection, ps);

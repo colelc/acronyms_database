@@ -6,6 +6,7 @@ public class ExcelAcronym extends Base {
 	private String refersTo;
 	private String definition;
 	private String areaKey;
+	private String tagString;
 
 	public ExcelAcronym() {
 		super();
@@ -13,6 +14,7 @@ public class ExcelAcronym extends Base {
 		this.refersTo = "";
 		this.definition = "";
 		this.areaKey = "";
+		this.tagString = "";
 	}
 
 	public ExcelAcronym(String acronym, String refersTo, String definition, String areaKey) {
@@ -58,6 +60,14 @@ public class ExcelAcronym extends Base {
 
 	public void setAreaKey(String areaKey) {
 		this.areaKey = areaKey;
+	}
+
+	public String getTagString() {
+		return tagString;
+	}
+
+	public void setTagString(String tagString) {
+		this.tagString = tagString;
 	}
 
 }
