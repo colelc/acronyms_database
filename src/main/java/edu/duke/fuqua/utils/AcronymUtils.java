@@ -171,7 +171,7 @@ public class AcronymUtils {
 
 			// tags
 			for (String tag : tagList) {
-				Integer id = service.populateFuquaAcronymTag(connection, table, columnNames, tag.trim());
+				Integer id = service.populateFuquaAcronymTag(connection, table, columnNames, tag.toUpperCase().trim());
 			}
 
 		} catch (Exception e) {
