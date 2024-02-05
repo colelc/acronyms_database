@@ -25,6 +25,11 @@ public class ExcelAcronym extends Base {
 		this.areaKey = areaKey;
 	}
 
+	public ExcelAcronym(String acronym, String refersTo, String definition, String areaKey, String tagString) {
+		this(acronym, refersTo, definition, areaKey);
+		this.tagString = tagString;
+	}
+
 	public ExcelAcronym(Integer id, String acronym, String refersTo, String definition, String areaKey) {
 		this(acronym, refersTo, definition, areaKey);
 		this.setId(id);

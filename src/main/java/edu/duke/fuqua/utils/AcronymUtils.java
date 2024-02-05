@@ -149,7 +149,12 @@ public class AcronymUtils {
 
 			// template data
 			for (Map<String, String> map : csvList) {
-				ExcelAcronym ea = new ExcelAcronym(map.get("ACRONYM").trim(), map.get("REFERS TO").trim(), map.get("DEFINITION").trim(), map.get("Area Key").trim());
+				ExcelAcronym ea = new ExcelAcronym(map.get("ACRONYM").trim(), /**/
+						map.get("REFERS TO").trim(), /**/
+						map.get("DEFINITION").trim(), /**/
+						map.get("Area Key").trim(), /**/
+						map.get("Area Key").toUpperCase().trim()/**/
+				);
 				Integer id = service.populateFuquaAcronyms(connection, table, columnNames, ea);
 			}
 
