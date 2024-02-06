@@ -1,13 +1,12 @@
 create table
-  public.dar_registration_appts (
+  public.dar_waitlist_appts (
     id INTEGER UNIQUE GENERATED ALWAYS AS IDENTITY,
     
     board_id  INTEGER NOT NULL,
     student_id INTEGER NOT NULL,
     appt_id INTEGER NOT NULL,
-    appt_timestamp TIMESTAMP NOT NULL default NOW(),
-    status BOOLEAN,
-    email_sent INTEGER NOT NULL default 0,
+    wait_timestamp TIMESTAMP NOT NULL default NOW(),
+    wait_status BOOLEAN,
     
     created_by VARCHAR(255) NOT NULL,
     created timestamp NOT NULL default NOW(),

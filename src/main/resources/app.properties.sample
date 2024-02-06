@@ -54,7 +54,7 @@ table.name.dar.board.members=dar_board_members
 table.name.dar.available.appts=dar_available_appts
 table.name.dar.students=dar_students
 table.name.dar.registration.appts=dar_registration_appts
-#
+table.name.dar.waitlist.appts=dar_waitlist_appts
 #
 ##------------------------------------------------------------------------------------------------------------------
 ### DDL for POSTGRES database

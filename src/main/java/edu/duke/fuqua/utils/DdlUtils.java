@@ -21,6 +21,8 @@ public class DdlUtils {
 
 			DdlUtils s = new DdlUtils();
 
+			s.dropTable(connection, "dar_waitlist_appts");
+			s.dropTable(connection, "dar_registration_appts");
 			s.dropTable(connection, "dar_students");
 			s.dropTable(connection, "dar_available_appts");
 			s.dropTable(connection, "dar_board_members");
@@ -28,6 +30,8 @@ public class DdlUtils {
 			s.createTable(connection, "create_dar_board_members", "dar_board_members");
 			s.createTable(connection, "create_dar_available_appts", "dar_available_appts");
 			s.createTable(connection, "create_dar_students", "dar_students");
+			s.createTable(connection, "create_dar_registration_appts", "dar_registration_appts");
+			s.createTable(connection, "create_dar_waitlist_appts", "dar_waitlist_appts");
 
 		} catch (Exception e) {
 			throw e;
