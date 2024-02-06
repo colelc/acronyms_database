@@ -68,6 +68,30 @@ public class PostgresUtils {
 		}
 	}
 
+	public Integer queryDARBoardMembersByEntityId(Connection connection, String entityId) throws Exception {
+
+		Integer retValue = null;
+		List<Integer> uhohList = new ArrayList<>();
+
+		try {
+			String sql = "SELECT id FROM " + DdlUtils.dbName("dar_board_members") + " ";
+			sql += " WHERE entity_id = \'" + entityId + "\' ";
+
+			// log.info(sql);
+			ResultSet rs = new ReadService().doQuery(connection, sql);
+			while (rs.next()) {
+				retValue = rs.getInt("id");
+				uhohList.add(retValue);
+				if (uhohList.size() > 1) {
+					throw new Exception("Entity ID values are not unique");
+				}
+			}
+		} catch (Exception e) {
+			throw e;
+		}
+		return retValue;
+	}
+
 	public List<ExcelAcronym> queryFuquaAcronyms(Connection connection, Integer id) throws Exception {
 
 		List<ExcelAcronym> returnList = new ArrayList<>();

@@ -1,48 +1,48 @@
-WHEN_ENTERED,ENTITY_ID,Select_Volunteer_DropDown,Currently_Serving_On,DATE,START_TIME,END_TIME
-1/10/24 12:00 PM,0000238815,Adam Shapiro,Health Care Alumni Advisory Board,"Friday, April 12, 2024",8:00 AM,8:30 AM
-1/10/24 12:00 PM,0000238815,Adam Shapiro,Health Care Alumni Advisory Board,"Friday, April 12, 2024",8:30 AM,9:00 AM
-1/12/24 3:00 PM,0000724962,Aki Garrett,Minority Alumni Advisory Board,"Thursday, April 11, 2024",4:30 PM,5:00 PM
-1/13/24 2:00 PM,0001186677,Alan Ma,Health Care Alumni Advisory Board,"Thursday, April 11, 2024",4:30 PM,5:00 PM
-1/14/24 8:00 AM,0001130967,Allie Ossa,Minority Alumni Advisory Board,"Thursday, April 11, 2024",4:30 PM,5:00 PM
-1/14/24 8:00 AM,0001130967,Allie Ossa,Minority Alumni Advisory Board,"Friday, April 12, 2024",8:00 AM,8:30 AM
-1/14/24 8:00 AM,0001130967,Allie Ossa,Minority Alumni Advisory Board,"Friday, April 12, 2024",8:30 AM,9:00 AM
-1/10/24 12:00 PM,0001062861,Ashley Bernstein,Alumni Council,"Thursday, April 11, 2024",4:30 PM,5:00 PM
-1/10/24 12:00 PM,0000711887,Ben Shobert,Health Care Alumni Advisory Board,"Thursday, April 11, 2024",4:30 PM,5:00 PM
-1/12/24 3:00 PM,0000520145,Betsy McCaw,Alumni Council,"Thursday, April 11, 2024",4:30 PM,5:00 PM
-1/13/24 2:00 PM,0000057302,Bill Greeley,Health Care Alumni Advisory Board,"Friday, April 12, 2024",8:30 AM,9:00 AM
-1/14/24 8:00 AM,0000619543,Cameron Cleeton,Health Care Alumni Advisory Board,"Friday, April 12, 2024",8:30 AM,9:00 AM
-1/14/24 8:00 AM,0001015997,Chantel Pizarro,Health Care Alumni Advisory Board,"Friday, April 12, 2024",8:30 AM,9:00 AM
-1/14/24 8:00 AM,0000752799,Chidi Erike,Alumni Council,"Friday, April 12, 2024",8:30 AM,9:00 AM
-1/10/24 12:00 PM,0001098086,Chris Castro,Minority Alumni Advisory Board,"Friday, April 12, 2024",8:00 AM,8:30 AM
-1/10/24 12:00 PM,0001098086,Chris Castro,Minority Alumni Advisory Board,"Friday, April 12, 2024",8:30 AM,9:00 AM
-1/12/24 3:00 PM,0000488502,Christine Shambach,Alumni Council,"Friday, April 12, 2024",8:00 AM,8:30 AM
-1/12/24 3:00 PM,0000488502,Christine Shambach,Alumni Council,"Friday, April 12, 2024",8:30 AM,9:00 AM
-1/14/24 8:00 AM,0001015407,Cordelia Chansler,Alumni Council,"Friday, April 12, 2024",8:30 AM,9:00 AM
-1/14/24 8:00 AM,0000487943,Damon Butler,Minority Alumni Advisory Board,"Thursday, April 11, 2024",4:00 PM,4:30 PM
-1/14/24 8:00 AM,0000487943,Damon Butler,Minority Alumni Advisory Board,"Thursday, April 11, 2024",4:30 PM,5:00 PM
-1/10/24 12:00 PM,0001163716,David Broeker,Alumni Council,"Thursday, April 11, 2024",4:30 PM,5:00 PM
-1/10/24 12:00 PM,0001131322,Diana Barrett Wiseman,Health Care Alumni Advisory Board,"Friday, April 12, 2024",8:30 AM,9:00 AM
-1/12/24 3:00 PM,0001163176,Drew Sussman,Alumni Council,"Friday, April 12, 2024",8:30 AM,9:00 AM
-1/13/24 2:00 PM,0000342531,Dwayne Sutton,Minority Alumni Advisory Board,"Friday, April 12, 2024",8:30 AM,9:00 AM
-1/14/24 8:00 AM,0000487957,Elizabeth Cassidy,Alumni Council,"Friday, April 12, 2024",8:00 AM,8:30 AM
-1/14/24 8:00 AM,0000487957,Elizabeth Cassidy,Alumni Council,"Friday, April 12, 2024",8:30 AM,9:00 AM
-1/14/24 8:00 AM,0001097689,Erika Hines,Minority Alumni Advisory Board,"Friday, April 12, 2024",8:30 AM,9:00 AM
-1/10/24 12:00 PM,0000487962,Henry Chang,Health Care Alumni Advisory Board,"Friday, April 12, 2024",8:30 AM,9:00 AM
-1/10/24 12:00 PM,0000185540,Hugh Lavery,Alumni Council,"Friday, April 12, 2024",8:30 AM,9:00 AM
-1/12/24 3:00 PM,0000724897,James Bullock,Minority Alumni Advisory Board,"Friday, April 12, 2024",8:00 AM,8:30 AM
-1/12/24 3:00 PM,0000724897,James Bullock,Minority Alumni Advisory Board,"Friday, April 12, 2024",8:30 AM,9:00 AM
-1/14/24 8:00 AM,0000629335,Jason Fernandez,Alumni Council,"Thursday, April 11, 2024",4:30 PM,5:00 PM
-1/14/24 8:00 AM,0000440940,Jay Shah,Health Care Alumni Advisory Board,"Thursday, April 11, 2024",4:30 PM,5:00 PM
-1/14/24 8:00 AM,0000566573,Jeff Lawrence,Health Care Alumni Advisory Board,"Thursday, April 11, 2024",4:30 PM,5:00 PM
-1/10/24 12:00 PM,0000391830,Jeff Otchis,Alumni Council,"Thursday, April 11, 2024",4:00 PM,4:30 PM
-1/10/24 12:00 PM,0000391830,Jeff Otchis,Alumni Council,"Friday, April 12, 2024",8:00 AM,8:30 AM
-1/10/24 12:00 PM,0000391830,Jeff Otchis,Alumni Council,"Friday, April 12, 2024",8:30 AM,9:00 AM
-1/13/24 2:00 PM,0000783265,Jessa Kelley,Health Care Alumni Advisory Board,"Friday, April 12, 2024",8:30 AM,9:00 AM
-1/14/24 8:00 AM,0001070179,Jessica Gourdet,Minority Alumni Advisory Board,"Friday, April 12, 2024",8:30 AM,9:00 AM
-1/14/24 8:00 AM,0000723744,Jessica Harris,Health Care Alumni Advisory Board,"Friday, April 12, 2024",8:30 AM,9:00 AM
-1/14/24 8:00 AM,0000563863,Jodi Reynolds,Health Care Alumni Advisory Board,"Thursday, April 11, 2024",4:00 PM,4:30 PM
-1/14/24 8:00 AM,0000563863,Jodi Reynolds,Health Care Alumni Advisory Board,"Friday, April 12, 2024",8:00 AM,8:30 AM
-1/14/24 8:00 AM,0000563863,Jodi Reynolds,Health Care Alumni Advisory Board,"Friday, April 12, 2024",8:30 AM,9:00 AM
-1/12/24 3:00 PM,0000563428,Jon Meltzer,Health Care Alumni Advisory Board,"Thursday, April 11, 2024",4:00 PM,4:30 PM
-1/13/24 2:00 PM,0001248599,Jonathan Rigaud,Alumni Council,"Friday, April 12, 2024",8:30 AM,9:00 AM
-1/14/24 8:00 AM,0001130496,Julian Gordon,Alumni Council,"Friday, April 12, 2024",8:30 AM,9:00 AM
+WHEN_ENTERED,WHEN_ENTERED_DB,ENTITY_ID,Select_Volunteer_DropDown,Currently_Serving_On,DATE,DATE_DB,START_TIME,START_TIME_DB,END_TIME,END_TIME_DB
+1/10/24 12:00 PM,2024-01-10 12:00:00,0000238815,Adam Shapiro,Health Care Alumni Advisory Board,"Friday, April 12, 2024",2024-04-12 00:00:00,8:00 AM,08:00,8:30 AM,08:30
+1/10/24 12:00 PM,2024-01-10 12:00:00,0000238815,Adam Shapiro,Health Care Alumni Advisory Board,"Friday, April 12, 2024",2024-04-12 00:00:00,8:30 AM,08:30,9:00 AM,09:00
+1/12/24 3:00 PM,2024-01-12 15:00:00,0000724962,Aki Garrett,Minority Alumni Advisory Board,"Thursday, April 11, 2024",2024-04-11 00:00:00,4:30 PM,16:30,5:00 PM,17:00
+1/13/24 2:00 PM,2024-01-13 14:00:00,0001186677,Alan Ma,Health Care Alumni Advisory Board,"Thursday, April 11, 2024",2024-04-11 00:00:00,4:30 PM,16:30,5:00 PM,17:00
+1/14/24 8:00 AM,2024-01-14 08:00:00,0001130967,Allie Ossa,Minority Alumni Advisory Board,"Thursday, April 11, 2024",2024-04-11 00:00:00,4:30 PM,16:30,5:00 PM,17:00
+1/14/24 8:00 AM,2024-01-14 08:00:00,0001130967,Allie Ossa,Minority Alumni Advisory Board,"Friday, April 12, 2024",2024-04-12 00:00:00,8:00 AM,08:00,8:30 AM,08:30
+1/14/24 8:00 AM,2024-01-14 08:00:00,0001130967,Allie Ossa,Minority Alumni Advisory Board,"Friday, April 12, 2024",2024-04-12 00:00:00,8:30 AM,08:30,9:00 AM,09:00
+1/10/24 12:00 PM,2024-01-10 12:00:00,0001062861,Ashley Bernstein,Alumni Council,"Thursday, April 11, 2024",2024-04-11 00:00:00,4:30 PM,16:30,5:00 PM,17:00
+1/10/24 12:00 PM,2024-01-10 12:00:00,0000711887,Ben Shobert,Health Care Alumni Advisory Board,"Thursday, April 11, 2024",2024-04-11 00:00:00,4:30 PM,16:30,5:00 PM,17:00
+1/12/24 3:00 PM,2024-01-12 15:00:00,0000520145,Betsy McCaw,Alumni Council,"Thursday, April 11, 2024",2024-04-11 00:00:00,4:30 PM,16:30,5:00 PM,17:00
+1/13/24 2:00 PM,2024-01-13 14:00:00,0000057302,Bill Greeley,Health Care Alumni Advisory Board,"Friday, April 12, 2024",2024-04-12 00:00:00,8:30 AM,08:30,9:00 AM,09:00
+1/14/24 8:00 AM,2024-01-14 08:00:00,0000619543,Cameron Cleeton,Health Care Alumni Advisory Board,"Friday, April 12, 2024",2024-04-12 00:00:00,8:30 AM,08:30,9:00 AM,09:00
+1/14/24 8:00 AM,2024-01-14 08:00:00,0001015997,Chantel Pizarro,Health Care Alumni Advisory Board,"Friday, April 12, 2024",2024-04-12 00:00:00,8:30 AM,08:30,9:00 AM,09:00
+1/14/24 8:00 AM,2024-01-14 08:00:00,0000752799,Chidi Erike,Alumni Council,"Friday, April 12, 2024",2024-04-12 00:00:00,8:30 AM,08:30,9:00 AM,09:00
+1/10/24 12:00 PM,2024-01-10 12:00:00,0001098086,Chris Castro,Minority Alumni Advisory Board,"Friday, April 12, 2024",2024-04-12 00:00:00,8:00 AM,08:00,8:30 AM,08:30
+1/10/24 12:00 PM,2024-01-10 12:00:00,0001098086,Chris Castro,Minority Alumni Advisory Board,"Friday, April 12, 2024",2024-04-12 00:00:00,8:30 AM,08:30,9:00 AM,09:00
+1/12/24 3:00 PM,2024-01-12 15:00:00,0000488502,Christine Shambach,Alumni Council,"Friday, April 12, 2024",2024-04-12 00:00:00,8:00 AM,08:00,8:30 AM,08:30
+1/12/24 3:00 PM,2024-01-12 15:00:00,0000488502,Christine Shambach,Alumni Council,"Friday, April 12, 2024",2024-04-12 00:00:00,8:30 AM,08:30,9:00 AM,09:00
+1/14/24 8:00 AM,2024-01-14 08:00:00,0001015407,Cordelia Chansler,Alumni Council,"Friday, April 12, 2024",2024-04-12 00:00:00,8:30 AM,08:30,9:00 AM,09:00
+1/14/24 8:00 AM,2024-01-14 08:00:00,0000487943,Damon Butler,Minority Alumni Advisory Board,"Thursday, April 11, 2024",2024-04-11 00:00:00,4:00 PM,16:00,4:30 PM,16:30
+1/14/24 8:00 AM,2024-01-14 08:00:00,0000487943,Damon Butler,Minority Alumni Advisory Board,"Thursday, April 11, 2024",2024-04-11 00:00:00,4:30 PM,16:30,5:00 PM,17:00
+1/10/24 12:00 PM,2024-01-10 12:00:00,0001163716,David Broeker,Alumni Council,"Thursday, April 11, 2024",2024-04-11 00:00:00,4:30 PM,16:30,5:00 PM,17:00
+1/10/24 12:00 PM,2024-01-10 12:00:00,0001131322,Diana Barrett Wiseman,Health Care Alumni Advisory Board,"Friday, April 12, 2024",2024-04-12 00:00:00,8:30 AM,08:30,9:00 AM,09:00
+1/12/24 3:00 PM,2024-01-12 15:00:00,0001163176,Drew Sussman,Alumni Council,"Friday, April 12, 2024",2024-04-12 00:00:00,8:30 AM,08:30,9:00 AM,09:00
+1/13/24 2:00 PM,2024-01-13 14:00:00,0000342531,Dwayne Sutton,Minority Alumni Advisory Board,"Friday, April 12, 2024",2024-04-12 00:00:00,8:30 AM,08:30,9:00 AM,09:00
+1/14/24 8:00 AM,2024-01-14 08:00:00,0000487957,Elizabeth Cassidy,Alumni Council,"Friday, April 12, 2024",2024-04-12 00:00:00,8:00 AM,08:00,8:30 AM,08:30
+1/14/24 8:00 AM,2024-01-14 08:00:00,0000487957,Elizabeth Cassidy,Alumni Council,"Friday, April 12, 2024",2024-04-12 00:00:00,8:30 AM,08:30,9:00 AM,09:00
+1/14/24 8:00 AM,2024-01-14 08:00:00,0001097689,Erika Hines,Minority Alumni Advisory Board,"Friday, April 12, 2024",2024-04-12 00:00:00,8:30 AM,08:30,9:00 AM,09:00
+1/10/24 12:00 PM,2024-01-10 12:00:00,0000487962,Henry Chang,Health Care Alumni Advisory Board,"Friday, April 12, 2024",2024-04-12 00:00:00,8:30 AM,08:30,9:00 AM,09:00
+1/10/24 12:00 PM,2024-01-10 12:00:00,0000185540,Hugh Lavery,Alumni Council,"Friday, April 12, 2024",2024-04-12 00:00:00,8:30 AM,08:30,9:00 AM,09:00
+1/12/24 3:00 PM,2024-01-12 15:00:00,0000724897,James Bullock,Minority Alumni Advisory Board,"Friday, April 12, 2024",2024-04-12 00:00:00,8:00 AM,08:00,8:30 AM,08:30
+1/12/24 3:00 PM,2024-01-12 15:00:00,0000724897,James Bullock,Minority Alumni Advisory Board,"Friday, April 12, 2024",2024-04-12 00:00:00,8:30 AM,08:30,9:00 AM,09:00
+1/14/24 8:00 AM,2024-01-14 08:00:00,0000629335,Jason Fernandez,Alumni Council,"Thursday, April 11, 2024",2024-04-11 00:00:00,4:30 PM,16:30,5:00 PM,17:00
+1/14/24 8:00 AM,2024-01-14 08:00:00,0000440940,Jay Shah,Health Care Alumni Advisory Board,"Thursday, April 11, 2024",2024-04-11 00:00:00,4:30 PM,16:30,5:00 PM,17:00
+1/14/24 8:00 AM,2024-01-14 08:00:00,0000566573,Jeff Lawrence,Health Care Alumni Advisory Board,"Thursday, April 11, 2024",2024-04-11 00:00:00,4:30 PM,16:30,5:00 PM,17:00
+1/10/24 12:00 PM,2024-01-10 12:00:00,0000391830,Jeff Otchis,Alumni Council,"Thursday, April 11, 2024",2024-04-11 00:00:00,4:00 PM,16:00,4:30 PM,16:30
+1/10/24 12:00 PM,2024-01-10 12:00:00,0000391830,Jeff Otchis,Alumni Council,"Friday, April 12, 2024",2024-04-12 00:00:00,8:00 AM,08:00,8:30 AM,08:30
+1/10/24 12:00 PM,2024-01-10 12:00:00,0000391830,Jeff Otchis,Alumni Council,"Friday, April 12, 2024",2024-04-12 00:00:00,8:30 AM,08:30,9:00 AM,09:00
+1/13/24 2:00 PM,2024-01-13 14:00:00,0000783265,Jessa Kelley,Health Care Alumni Advisory Board,"Friday, April 12, 2024",2024-04-12 00:00:00,8:30 AM,08:30,9:00 AM,09:00
+1/14/24 8:00 AM,2024-01-14 08:00:00,0001070179,Jessica Gourdet,Minority Alumni Advisory Board,"Friday, April 12, 2024",2024-04-12 00:00:00,8:30 AM,08:30,9:00 AM,09:00
+1/14/24 8:00 AM,2024-01-14 08:00:00,0000723744,Jessica Harris,Health Care Alumni Advisory Board,"Friday, April 12, 2024",2024-04-12 00:00:00,8:30 AM,08:30,9:00 AM,09:00
+1/14/24 8:00 AM,2024-01-14 08:00:00,0000563863,Jodi Reynolds,Health Care Alumni Advisory Board,"Thursday, April 11, 2024",2024-04-11 00:00:00,4:00 PM,16:00,4:30 PM,16:30
+1/14/24 8:00 AM,2024-01-14 08:00:00,0000563863,Jodi Reynolds,Health Care Alumni Advisory Board,"Friday, April 12, 2024",2024-04-12 00:00:00,8:00 AM,08:00,8:30 AM,08:30
+1/14/24 8:00 AM,2024-01-14 08:00:00,0000563863,Jodi Reynolds,Health Care Alumni Advisory Board,"Friday, April 12, 2024",2024-04-12 00:00:00,8:30 AM,08:30,9:00 AM,09:00
+1/12/24 3:00 PM,2024-01-12 15:00:00,0000563428,Jon Meltzer,Health Care Alumni Advisory Board,"Thursday, April 11, 2024",2024-04-11 00:00:00,4:00 PM,16:00,4:30 PM,16:30
+1/13/24 2:00 PM,2024-01-13 14:00:00,0001248599,Jonathan Rigaud,Alumni Council,"Friday, April 12, 2024",2024-04-12 00:00:00,8:30 AM,08:30,9:00 AM,09:00
+1/14/24 8:00 AM,2024-01-14 08:00:00,0001130496,Julian Gordon,Alumni Council,"Friday, April 12, 2024",2024-04-12 00:00:00,8:30 AM,08:30,9:00 AM,09:00

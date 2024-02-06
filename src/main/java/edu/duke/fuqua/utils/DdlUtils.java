@@ -21,15 +21,12 @@ public class DdlUtils {
 
 			DdlUtils s = new DdlUtils();
 
-			s.dropTable(connection, "dar_board_members");
-//			s.dropTable(connection, "fuqua_acronym_tags");
-//			s.dropTable(connection, "fuqua_acronyms");
-//			s.dropTable(connection, "fuqua_acronym_permissions");
+			s.dropTable(connection, "dar_available_appts");
+			// s.dropTable(connection, "dar_board_members");
 
-			s.createTable(connection, "create_dar_board_members", "dar_board_members");
-//			s.createTable(connection, "create_fuqua_acronyms", "fuqua_acronyms");
-//			s.createTable(connection, "create_fuqua_acronym_tags", "fuqua_acronym_tags");
-//			s.createTable(connection, "create_fuqua_acronym_tag_map", "fuqua_acronym_tag_map");
+			// s.createTable(connection, "create_dar_board_members", "dar_board_members");
+			s.createTable(connection, "create_dar_available_appts", "dar_available_appts");
+
 		} catch (Exception e) {
 			throw e;
 		}
@@ -107,6 +104,24 @@ public class DdlUtils {
 			columnNamesList = columnNamesList.stream()/**/
 					.filter(f -> f.compareTo("id") != 0 /**/
 							&& f.compareTo("created") != 0 /**/
+							&& f.compareTo("deleted") != 0 /**/
+							&& f.compareTo("deleted_by") != 0 /**/
+							&& f.compareTo("last_updated") != 0 /**/
+							&& f.compareTo("last_updated_by") != 0)
+					.collect(Collectors.toList());
+			return columnNamesList;
+		} catch (Exception e) {
+			throw e;
+		}
+
+	}
+
+	public static List<String> getTableColumnsDARAvailableAppts(Connection connection, String tableName) throws Exception {
+		try {
+			List<String> columnNamesList = new ReadService().getColumnsInTable(connection, tableName);
+			columnNamesList = columnNamesList.stream()/**/
+					.filter(f -> f.compareTo("id") != 0 /**/
+							// && f.compareTo("created") != 0 /**/
 							&& f.compareTo("deleted") != 0 /**/
 							&& f.compareTo("deleted_by") != 0 /**/
 							&& f.compareTo("last_updated") != 0 /**/
