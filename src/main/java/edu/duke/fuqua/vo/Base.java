@@ -5,8 +5,13 @@ import java.sql.Timestamp;
 public class Base {
 	private Integer id;
 	private boolean active;
+
 	private String createdBy;
 	private Timestamp created;
+
+	private String lastUpdatedBy;
+	private Timestamp lastUpdated;
+
 	private String deletedBy;
 	private Timestamp deleted;
 
@@ -65,5 +70,21 @@ public class Base {
 
 	public void setDeleted(Timestamp deleted) {
 		this.deleted = deleted;
+	}
+
+	public String getLastUpdatedBy() {
+		return lastUpdatedBy;
+	}
+
+	public void setLastUpdatedBy(String lastUpdatedBy) {
+		this.lastUpdatedBy = lastUpdatedBy;
+	}
+
+	public Timestamp getLastUpdated() {
+		return lastUpdated;
+	}
+
+	public void setLastUpdated(Timestamp lastUpdated) {
+		this.lastUpdated = lastUpdated;
 	}
 }

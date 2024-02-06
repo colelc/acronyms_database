@@ -50,6 +50,9 @@ table.name.fuqua.acronym.tags=fuqua_acronym_tags
 table.name.fuqua.acronym.tag.map=fuqua_acronym_tag_map
 table.name.fuqua.acronym.permissions=fuqua_acronym_permissions
 #
+table.name.dar.board.members=dar_board_members
+table.name.dar.available.appts=dar_available_appts
+#
 #
 ##------------------------------------------------------------------------------------------------------------------
 ### DDL for POSTGRES database
@@ -58,6 +61,18 @@ s.postgres.ddl.directory=/home/linda/eclipse-workspace/acronym_data_utils/src/ma
 p.postgres.ddl.directory=/home/linda/eclipse-workspace/acronym_data_utils/src/main/resources/data/db/ddl
 #
 ##------------------------------------------------------------------------------------------------------------------
+#### DIRECTORY for DAR csv files
+d.dar.excel.directory=/home/linda/eclipse-workspace/acronym_data_utils/src/main/resources/data
+s.dar.excel.directory=/home/linda/eclipse-workspace/acronym_data_utils/src/main/resources/data
+p.dar.excel.directory=/home/linda/eclipse-workspace/acronym_data_utils/src/main/resources/data
+#
+d.dar.excel.csv.file.board.members=DAR_Volunteers_Unique.csv
+s.dar.excel.csv.file.board.members=DAR_Volunteers_Unique.csv
+p.dar.excel.csv.file.board.members=DAR_Volunteers_Unique.csv
+#
+d.dar.excel.csv.file.available.appts=DAR_Volunteer_Available_Timeslots.csv
+s.dar.excel.csv.file.available.appts=DAR_Volunteer_Available_Timeslots.csv
+p.dar.excel.csv.file.available.appts=DAR_Volunteer_Available_Timeslots.csv
 ##
 ## DIRECTORY for acronym csv file
 d.acronym.excel.directory=/home/linda/eclipse-workspace/acronym_data_utils/src/main/resources/data

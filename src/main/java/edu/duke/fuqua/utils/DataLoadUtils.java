@@ -25,7 +25,8 @@ public class DataLoadUtils {
 			if (loadDar) {
 				log.info("Loading DAR data");
 				;
-//				DdlUtils.deleteRedefinePostgresqlTables();
+				DdlUtils.deleteRedefineDARPostgresqlTables();
+				DARUtils.loadDARBoardMembers();
 //				AcronymUtils.loadAcronymData();
 //				AcronymUtils.loadAcronymTags();
 //				AcronymUtils.loadAcronymTagMap();

@@ -11,6 +11,7 @@ import org.apache.log4j.Logger;
 
 import edu.duke.fuqua.db.CreateService;
 import edu.duke.fuqua.db.ReadService;
+import edu.duke.fuqua.vo.BoardMember;
 import edu.duke.fuqua.vo.ExcelAcronym;
 import edu.duke.fuqua.vo.Tag;
 
@@ -26,6 +27,45 @@ public class PostgresUtils {
 			instance = new PostgresUtils();
 		}
 		return instance;
+	}
+
+	public Integer populateDARBoardMembers(Connection connection, String tableName, List<String> columnNamesList, BoardMember data) throws Exception {
+		try {
+			String sql = "INSERT INTO " + getDbName() + "." + tableName + " "/**/
+					+ " (" + columnNamesList.stream().collect(Collectors.joining(", ")) + " ) " /**/
+					+ " VALUES " /**/
+					+ " (" + columnNamesList.stream().map(m -> "?").collect(Collectors.joining(", ")) + " ) " /**/
+					+ " RETURNING id "/**/
+					+ "; ";
+
+			log.info(sql);
+			CreateService service = new CreateService();
+
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setString(1, data.getEntityId() == null ? "" : data.getEntityId().trim());
+			ps.setString(2, data.getBoardFname() == null ? "" : data.getBoardFname().trim());
+			ps.setString(3, data.getBoardLname() == null ? "" : data.getBoardLname().trim());
+			ps.setString(4, data.getBoardPreferredName() == null ? "" : data.getBoardPreferredName().trim());
+			ps.setString(5, data.getProgram() == null ? "" : data.getProgram().trim());
+			ps.setString(6, data.getBoardClass() == null ? "" : data.getBoardClass().trim());
+			ps.setString(7, data.getHsmCert() == null ? "" : data.getHsmCert().trim());
+			ps.setString(8, data.getOtherDukeDegree() == null ? "" : data.getOtherDukeDegree().trim());
+			ps.setString(9, data.getEmployer() == null ? "" : data.getEmployer().trim());
+			ps.setString(10, data.getJobTitle() == null ? "" : data.getJobTitle().trim());
+			ps.setString(11, data.getLinkedIn() == null ? "" : data.getLinkedIn());
+			ps.setString(12, data.getCurServeOn() == null ? "" : data.getCurServeOn());
+			ps.setString(13, data.getBoardPhoto() == null ? "" : data.getBoardPhoto().trim());
+			ps.setString(14, data.getBoardEmail() == null ? "" : data.getBoardEmail().trim());
+
+			ps.setBoolean(15, true); // active
+			ps.setString(16, "postgres"); // created_by
+
+			// log.info("Inserting to rec_template: " + data.toString());
+			Integer id = service.insert(connection, ps);
+			return id;
+		} catch (Exception e) {
+			throw e;
+		}
 	}
 
 	public List<ExcelAcronym> queryFuquaAcronyms(Connection connection, Integer id) throws Exception {
