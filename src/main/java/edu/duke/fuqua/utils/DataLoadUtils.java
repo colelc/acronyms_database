@@ -25,7 +25,7 @@ public class DataLoadUtils {
 			if (loadDar) {
 				log.info("Loading DAR data");
 				DdlUtils.deleteRedefineDARPostgresqlTables();
-				// DARUtils.loadDARBoardMembers();
+				DARUtils.loadDARBoardMembers();
 				DARUtils.loadDARAvailableAppts();
 				log.info("DAR work is complete");
 			}

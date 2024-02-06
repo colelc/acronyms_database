@@ -21,11 +21,13 @@ public class DdlUtils {
 
 			DdlUtils s = new DdlUtils();
 
+			s.dropTable(connection, "dar_students");
 			s.dropTable(connection, "dar_available_appts");
-			// s.dropTable(connection, "dar_board_members");
+			s.dropTable(connection, "dar_board_members");
 
-			// s.createTable(connection, "create_dar_board_members", "dar_board_members");
+			s.createTable(connection, "create_dar_board_members", "dar_board_members");
 			s.createTable(connection, "create_dar_available_appts", "dar_available_appts");
+			s.createTable(connection, "create_dar_students", "dar_students");
 
 		} catch (Exception e) {
 			throw e;
