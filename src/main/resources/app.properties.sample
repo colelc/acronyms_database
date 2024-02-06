@@ -13,6 +13,9 @@ ENV=d
 d.env=d
 s.env=s
 p.env=p
+## which project to load tables for
+load.acronyms=N
+load.dar=Y
 ##
 ##### POSTGRES
 d.postgres.driver=org.postgresql.Driver

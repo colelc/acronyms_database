@@ -8,16 +8,30 @@ public class DataLoadUtils {
 
 	public static void main(String[] args) {
 		try {
-			DdlUtils.deleteRedefinePostgresqlTables();
+			boolean loadAcronyms = ConfigUtils.getPropertyAsBoolean("load.acronyms");
+			boolean loadDar = ConfigUtils.getPropertyAsBoolean("load.dar");
 
-			AcronymUtils.loadAcronymData();
+			if (loadAcronyms) {
+				log.info("Loading ACRONYMS data");
+				;
+				DdlUtils.deleteRedefinePostgresqlTables();
+				AcronymUtils.loadAcronymData();
+				AcronymUtils.loadAcronymTags();
+				AcronymUtils.loadAcronymTagMap();
+				QueryUtils.queryTests();
+				log.info("ACRONYMS work is complete");
+			}
 
-			AcronymUtils.loadAcronymTags();
-
-			AcronymUtils.loadAcronymTagMap();
-
-			QueryUtils.queryTests();
-
+			if (loadDar) {
+				log.info("Loading DAR data");
+				;
+//				DdlUtils.deleteRedefinePostgresqlTables();
+//				AcronymUtils.loadAcronymData();
+//				AcronymUtils.loadAcronymTags();
+//				AcronymUtils.loadAcronymTagMap();
+//				QueryUtils.queryTests();
+				log.info("DAR work is complete");
+			}
 			log.info("DONE");
 		} catch (Exception e) {
 			log.error(e.getMessage());
