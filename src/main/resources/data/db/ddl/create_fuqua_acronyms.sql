@@ -6,9 +6,9 @@ create table
     definition VARCHAR(65535) NOT NULL,
     area_key VARCHAR(4096) NULL,
     tag_string VARCHAR(4096) NULL,
-    active BOOLEAN NOT NULL default TRUE,
+    active BOOLEAN NOT NULL,
     created_by VARCHAR(255) NOT NULL,
     created timestamp NOT NULL default NOW(),
-    last_updated_by VARCHAR(255) NOT NULL,
-    last_updated TIMESTAMP NOT NULL default NOW()
+    last_updated_by VARCHAR(255) NULL,
+    last_updated TIMESTAMP NULL 
   );

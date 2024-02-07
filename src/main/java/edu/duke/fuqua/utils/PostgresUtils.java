@@ -187,7 +187,7 @@ public class PostgresUtils {
 			ps.setString(5, data.getTagString());
 			ps.setBoolean(6, data.isActive());
 			ps.setString(7, "postgres"); // created_by
-			ps.setString(8, "postgres"); // last_updated_by
+			// ps.setString(8, "postgres"); // last_updated_by
 
 			// log.info("Inserting to rec_template: " + data.toString());
 			Integer id = service.insert(connection, ps);
@@ -212,7 +212,7 @@ public class PostgresUtils {
 			ps.setString(1, tag);
 			ps.setBoolean(2, true);
 			ps.setString(3, "postgres"); // created_by
-			ps.setString(4, "postgres"); // last_updated_by
+			// ps.setString(4, "postgres"); // last_updated_by
 
 			Integer id = service.insert(connection, ps);
 			return id;
@@ -237,7 +237,7 @@ public class PostgresUtils {
 			ps.setInt(2, tagId);
 			ps.setBoolean(3, true);
 			ps.setString(4, "postgres"); // created_by
-			ps.setString(5, "postgres"); // deleted_by
+			// ps.setString(5, "postgres"); // last_updated_by
 
 			Integer id = service.insert(connection, ps);
 			return id;

@@ -17,6 +17,7 @@ public class Base {
 
 	public Base() {
 		super();
+		this.active = true;
 	}
 
 	public Base(Integer id) {
