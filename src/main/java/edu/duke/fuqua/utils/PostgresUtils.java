@@ -29,6 +29,29 @@ public class PostgresUtils {
 		return instance;
 	}
 
+	public Integer populateFuquaAcronymPermissions(Connection connection, String tableName, List<String> columnNamesList, String dukeId) throws Exception {
+		try {
+			String sql = "INSERT INTO " + getDbName() + "." + tableName + " "/**/
+					+ " (" + columnNamesList.stream().collect(Collectors.joining(", ")) + " ) " /**/
+					+ " VALUES " /**/
+					+ " (" + columnNamesList.stream().map(m -> "?").collect(Collectors.joining(", ")) + " ) " /**/
+					+ " RETURNING id "/**/
+					+ "; ";
+
+			CreateService service = new CreateService();
+
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setString(1, dukeId);
+			ps.setBoolean(2, true);
+			ps.setString(3, "postgres"); // created_by
+
+			Integer id = service.insert(connection, ps);
+			return id;
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+
 	public Integer populateDARBoardMembers(Connection connection, String tableName, List<String> columnNamesList, BoardMember data) throws Exception {
 		try {
 			String sql = "INSERT INTO " + getDbName() + "." + tableName + " "/**/

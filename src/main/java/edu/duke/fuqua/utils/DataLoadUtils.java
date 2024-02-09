@@ -18,6 +18,7 @@ public class DataLoadUtils {
 				AcronymUtils.loadAcronymData();
 				AcronymUtils.loadAcronymTags();
 				AcronymUtils.loadAcronymTagMap();
+				AcronymUtils.loadAcronymPermissions();
 				QueryUtils.queryTests();
 				log.info("ACRONYMS work is complete");
 			}

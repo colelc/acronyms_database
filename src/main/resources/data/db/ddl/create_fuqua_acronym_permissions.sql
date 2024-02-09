@@ -5,6 +5,6 @@ create table
     active BOOLEAN NOT NULL default TRUE,
     created_by VARCHAR(255) NOT NULL,
     created timestamp NOT NULL default NOW(),
-    last_updated_by VARCHAR(255) NOT NULL,
-    last_updated TIMESTAMP NOT NULL default NOW()
+    last_updated_by VARCHAR(255) NULL,
+    last_updated TIMESTAMP NULL 
   );

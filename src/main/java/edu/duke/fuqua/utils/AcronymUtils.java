@@ -18,6 +18,20 @@ public class AcronymUtils {
 
 	private static Logger log = Logger.getLogger(AcronymUtils.class);
 
+	public static void loadAcronymPermissions() throws Exception {
+		try {
+			Connection connection = ConnectionService.connect("postgres");
+			PostgresUtils service = new PostgresUtils();
+
+			String table = ConfigUtils.getProperty("table.name.fuqua.acronym.permissions");
+			List<String> columnNames = DdlUtils.getTableColumns(connection, table);
+
+			Integer id = service.populateFuquaAcronymPermissions(connection, table, columnNames, "lcc9");
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+
 	public static void loadAcronymData() {
 		try {
 			String acronymDirectory = ConfigUtils.getProperty("acronym.excel.directory");
