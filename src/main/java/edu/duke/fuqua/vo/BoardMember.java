@@ -1,7 +1,7 @@
 package edu.duke.fuqua.vo;
 
 public class BoardMember extends Base {
-	private String entityId;
+	private Integer entityId;
 	private String boardFname;
 	private String boardLname;
 	private String boardPreferredName;
@@ -20,11 +20,11 @@ public class BoardMember extends Base {
 		super();
 	}
 
-	public String getEntityId() {
+	public Integer getEntityId() {
 		return entityId;
 	}
 
-	public void setEntityId(String entityId) {
+	public void setEntityId(Integer entityId) {
 		this.entityId = entityId;
 	}
 

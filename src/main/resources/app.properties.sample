@@ -76,6 +76,11 @@ d.dar.excel.csv.file.available.appts=DAR_Volunteer_Available_Timeslots.csv
 s.dar.excel.csv.file.available.appts=DAR_Volunteer_Available_Timeslots.csv
 p.dar.excel.csv.file.available.appts=DAR_Volunteer_Available_Timeslots.csv
 ##
+d.dar.excel.csv.file.board.members.email=DAR_Volunteers_Email.csv
+s.dar.excel.csv.file.board.members.email=DAR_Volunteers_Email.csv
+p.dar.excel.csv.file.board.members.email=DAR_Volunteers_Email.csv
+#
+##
 ## DIRECTORY for acronym csv file
 d.acronym.excel.directory=/home/linda/eclipse-workspace/acronym_data_utils/src/main/resources/data
 s.acronym.excel.directory=/home/linda/eclipse-workspace/acronym_data_utils/src/main/resources/data

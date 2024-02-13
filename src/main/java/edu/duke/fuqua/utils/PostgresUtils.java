@@ -65,7 +65,7 @@ public class PostgresUtils {
 			CreateService service = new CreateService();
 
 			PreparedStatement ps = connection.prepareStatement(sql);
-			ps.setString(1, data.getEntityId() == null ? "" : data.getEntityId().trim());
+			ps.setInt(1, data.getEntityId());
 			ps.setString(2, data.getBoardFname() == null ? "" : data.getBoardFname().trim());
 			ps.setString(3, data.getBoardLname() == null ? "" : data.getBoardLname().trim());
 			ps.setString(4, data.getBoardPreferredName() == null ? "" : data.getBoardPreferredName().trim());
@@ -91,14 +91,14 @@ public class PostgresUtils {
 		}
 	}
 
-	public Integer queryDARBoardMembersByEntityId(Connection connection, String entityId) throws Exception {
+	public Integer queryDARBoardMembersByEntityId(Connection connection, Integer entityId) throws Exception {
 
 		Integer retValue = null;
 		List<Integer> uhohList = new ArrayList<>();
 
 		try {
 			String sql = "SELECT id FROM " + DdlUtils.dbName("dar_board_members") + " ";
-			sql += " WHERE entity_id = \'" + entityId + "\' ";
+			sql += " WHERE entity_id = " + entityId + " ";
 
 			// log.info(sql);
 			ResultSet rs = new ReadService().doQuery(connection, sql);

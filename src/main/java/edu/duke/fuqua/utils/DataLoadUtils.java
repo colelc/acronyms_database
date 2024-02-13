@@ -28,6 +28,7 @@ public class DataLoadUtils {
 				DdlUtils.deleteRedefineDARPostgresqlTables();
 				DARUtils.loadDARBoardMembers();
 				DARUtils.loadDARAvailableAppts();
+				DARUtils.addBoardMemberEmailAddresses();
 				log.info("DAR work is complete");
 			}
 			log.info("DONE");

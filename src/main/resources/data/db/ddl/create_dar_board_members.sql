@@ -1,7 +1,7 @@
 create table
   public.dar_board_members (
     id INTEGER UNIQUE GENERATED ALWAYS AS IDENTITY,
-    entity_id TEXT NOT NULL, 
+    entity_id INTEGER NOT NULL, 
     board_fname TEXT NOT NULL,
     board_lname TEXT NOT NULL,
     board_preferred TEXT NOT NULL DEFAULT '',

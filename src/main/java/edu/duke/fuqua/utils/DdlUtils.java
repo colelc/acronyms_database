@@ -122,7 +122,7 @@ public class DdlUtils {
 
 	}
 
-	public static List<String> getTableColumnsDARAvailableAppts(Connection connection, String tableName) throws Exception {
+	public static List<String> getTableColumnsDAR(Connection connection, String tableName) throws Exception {
 		try {
 			List<String> columnNamesList = new ReadService().getColumnsInTable(connection, tableName);
 			columnNamesList = columnNamesList.stream()/**/

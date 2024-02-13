@@ -14,6 +14,7 @@ import org.apache.log4j.Logger;
 
 import edu.duke.fuqua.db.ConnectionService;
 import edu.duke.fuqua.db.CreateService;
+import edu.duke.fuqua.db.UpdateService;
 import edu.duke.fuqua.vo.BoardMember;
 import edu.duke.fuqua.vo.ExcelAcronym;
 import edu.duke.fuqua.vo.Tag;
@@ -50,7 +51,7 @@ public class DARUtils {
 			for (Map<String, String> map : csvList) {
 				log.info(map.toString());
 				BoardMember bm = new BoardMember();
-				bm.setEntityId(map.get("ENTITY_ID"));
+				bm.setEntityId(Integer.valueOf(map.get("ENTITY_ID")));
 				bm.setBoardFname(map.get("First_Name"));
 				bm.setBoardLname(map.get("Last_Name"));
 				bm.setBoardPreferredName("");
@@ -90,19 +91,66 @@ public class DARUtils {
 		}
 	}
 
+	public static void addBoardMemberEmailAddresses() throws Exception {
+		try {
+			String darDirectory = ConfigUtils.getProperty("dar.excel.directory");
+			String csvFile = darDirectory + File.separator + ConfigUtils.getProperty("dar.excel.csv.file.board.members.email");
+			List<Map<String, String>> csvList = ExcelUtils.csvToList(csvFile);
+
+			updateBoardMemberEmailAddresses(csvList);
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+
+	private static void updateBoardMemberEmailAddresses(List<Map<String, String>> csvList) throws Exception {
+		try {
+			Connection connection = ConnectionService.connect("postgres");
+			PostgresUtils service = new PostgresUtils();
+			UpdateService updateService = new UpdateService();
+
+			for (Map<String, String> map : csvList) {
+				log.info(map.get("ENTITY_ID") + " " + map.get("First_Name") + " " + map.get("Last_Name") + " " + map.get("EmailAddress"));
+
+				Integer entityId = Integer.valueOf(map.get("ENTITY_ID"));
+
+				Integer boardId = service.queryDARBoardMembersByEntityId(connection, entityId);
+				if (boardId == null) {
+					log.warn("Cannot find DB record for entity id = " + entityId);
+					continue;
+				}
+
+				String emailAddress = map.get("EmailAddress");
+
+				String sql = "UPDATE " + PostgresUtils.getDbName() + "." + "dar_board_members" + " "/**/
+						+ " SET board_email = " + "\'" + emailAddress + "\' " /**/
+						+ " WHERE id = " + String.valueOf(boardId)/**/
+						+ "; ";
+
+				log.info(sql);
+
+				PreparedStatement ps = connection.prepareStatement(sql);
+				updateService.update(connection, ps);
+			}
+
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+
 	private static void populateDARAvailableAppts(List<Map<String, String>> csvList) throws Exception {
 		try {
 			Connection connection = ConnectionService.connect("postgres");
 			PostgresUtils service = new PostgresUtils();
 
 			String table = ConfigUtils.getProperty("table.name.dar.available.appts");
-			List<String> columnNames = DdlUtils.getTableColumnsDARAvailableAppts(connection, table);
+			List<String> columnNames = DdlUtils.getTableColumnsDAR(connection, table);
 			System.out.println(columnNames.stream().collect(Collectors.joining(", ")));
 
 			for (Map<String, String> map : csvList) {
 				log.info(map.toString());
 
-				Integer boardId = service.queryDARBoardMembersByEntityId(connection, map.get("ENTITY_ID"));
+				Integer boardId = service.queryDARBoardMembersByEntityId(connection, Integer.valueOf(map.get("ENTITY_ID")));
 
 				String apptDateText = map.get("DATE");
 
