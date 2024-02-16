@@ -17,6 +17,6 @@ create table
     
     PRIMARY KEY(id),
     CONSTRAINT fk_dar_board_members_board_id   FOREIGN KEY(board_id) REFERENCES public.dar_board_members(id),
-    CONSTRAINT fk_dar_available_appts_appt_id   FOREIGN KEY(appt_id) REFERENCES public.dar_available_appts(id),
-    CONSTRAINT fk_dar_students_student_id   FOREIGN KEY(student_id) REFERENCES public.dar_students(id)
+    CONSTRAINT fk_dar_available_appts_appt_id   FOREIGN KEY(appt_id) REFERENCES public.dar_available_appts(id)
+    /*CONSTRAINT fk_dar_students_student_id   FOREIGN KEY(student_id) REFERENCES public.dar_students(id)*/
   );

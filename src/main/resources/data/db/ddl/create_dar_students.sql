@@ -1,3 +1,4 @@
+/*
 create table
   public.dar_students (
     id INTEGER UNIQUE GENERATED ALWAYS AS IDENTITY,
@@ -22,3 +23,4 @@ create table
     last_updated TIMESTAMP NULL
   
   );
+*/
