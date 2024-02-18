@@ -15,7 +15,7 @@ public class QueryUtils {
 	public static void queryTests() throws Exception {
 		try {
 			Connection connection = ConnectionService.connect("postgres");
-			queryAcronymTags(connection, null);
+			// queryAcronymTags(connection, null);
 			;
 		} catch (Exception e) {
 			throw e;

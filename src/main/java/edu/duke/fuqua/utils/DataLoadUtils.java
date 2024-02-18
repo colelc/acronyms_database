@@ -16,8 +16,8 @@ public class DataLoadUtils {
 				;
 				DdlUtils.deleteRedefinePostgresqlTables();
 				AcronymUtils.loadAcronymData();
-				AcronymUtils.loadAcronymTags();
-				AcronymUtils.loadAcronymTagMap();
+				// AcronymUtils.loadAcronymTags();
+				// AcronymUtils.loadAcronymTagMap();
 				AcronymUtils.loadAcronymPermissions();
 				QueryUtils.queryTests();
 				log.info("ACRONYMS work is complete");

@@ -44,15 +44,15 @@ public class DdlUtils {
 
 			DdlUtils s = new DdlUtils();
 
-			s.dropTable(connection, "fuqua_acronym_tag_map");
-			s.dropTable(connection, "fuqua_acronym_tags");
+			// s.dropTable(connection, "fuqua_acronym_tag_map");
+			// s.dropTable(connection, "fuqua_acronym_tags");
 			s.dropTable(connection, "fuqua_acronyms");
 			s.dropTable(connection, "fuqua_acronym_permissions");
 
 			s.createTable(connection, "create_fuqua_acronym_permissions", "fuqua_acronym_permissions");
 			s.createTable(connection, "create_fuqua_acronyms", "fuqua_acronyms");
-			s.createTable(connection, "create_fuqua_acronym_tags", "fuqua_acronym_tags");
-			s.createTable(connection, "create_fuqua_acronym_tag_map", "fuqua_acronym_tag_map");
+			// s.createTable(connection, "create_fuqua_acronym_tags", "fuqua_acronym_tags");
+			// s.createTable(connection, "create_fuqua_acronym_tag_map", "fuqua_acronym_tag_map");
 		} catch (Exception e) {
 			throw e;
 		}
