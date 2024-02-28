@@ -27,6 +27,6 @@ create table
     last_updated_by VARCHAR(255)  NULL,
     last_updated TIMESTAMP NULL,
     
-    PRIMARY KEY(id),
-    CONSTRAINT fk_dar_board_members_board_id   FOREIGN KEY(board_id) REFERENCES public.dar_board_members(id)
+    PRIMARY KEY(id)
+    /* CONSTRAINT fk_dar_board_members_board_id   FOREIGN KEY(board_id) REFERENCES public.dar_board_members(id)*/
   );

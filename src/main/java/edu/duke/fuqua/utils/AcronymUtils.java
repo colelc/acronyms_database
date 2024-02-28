@@ -26,7 +26,10 @@ public class AcronymUtils {
 			String table = ConfigUtils.getProperty("table.name.fuqua.acronym.permissions");
 			List<String> columnNames = DdlUtils.getTableColumns(connection, table);
 
-			Integer id = service.populateFuquaAcronymPermissions(connection, table, columnNames, "lcc9");
+			service.populateFuquaAcronymPermissions(connection, table, columnNames, "0309804"); // Linda Cole
+			service.populateFuquaAcronymPermissions(connection, table, columnNames, "0200021"); // Joe Conder
+			service.populateFuquaAcronymPermissions(connection, table, columnNames, "0550523"); // Brenda Tate
+			service.populateFuquaAcronymPermissions(connection, table, columnNames, "0218757"); // Missy McCollick
 		} catch (Exception e) {
 			throw e;
 		}
