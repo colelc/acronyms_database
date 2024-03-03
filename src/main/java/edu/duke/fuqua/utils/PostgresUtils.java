@@ -29,7 +29,7 @@ public class PostgresUtils {
 		return instance;
 	}
 
-	public Integer populateFuquaAcronymPermissions(Connection connection, String tableName, List<String> columnNamesList, String dukeId) throws Exception {
+	public Integer populateFuquaAcronymPermissions(Connection connection, String tableName, List<String> columnNamesList, String dukeId, String email) throws Exception {
 		try {
 			String sql = "INSERT INTO " + getDbName() + "." + tableName + " "/**/
 					+ " (" + columnNamesList.stream().collect(Collectors.joining(", ")) + " ) " /**/
@@ -42,8 +42,9 @@ public class PostgresUtils {
 
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setString(1, dukeId);
-			ps.setBoolean(2, true);
-			ps.setString(3, "postgres"); // created_by
+			ps.setString(2, email);
+			ps.setBoolean(3, true);
+			ps.setString(4, "postgres"); // created_by
 
 			Integer id = service.insert(connection, ps);
 			return id;

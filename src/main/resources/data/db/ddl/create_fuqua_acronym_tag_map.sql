@@ -1,4 +1,4 @@
-create table
+/*create table
   public.fuqua_acronym_tag_map (
     id INTEGER   UNIQUE   GENERATED ALWAYS AS IDENTITY,
     acronym_id INTEGER NOT NULL,
@@ -13,3 +13,4 @@ create table
     CONSTRAINT fk_fuqua_acronyms_acronym_id   FOREIGN KEY(acronym_id) REFERENCES public.fuqua_acronyms(id),
     CONSTRAINT fk_fuqua_acronym_tags_tag_id   FOREIGN KEY(tag_id) REFERENCES public.fuqua_acronym_tags(id)
   );
+*/
