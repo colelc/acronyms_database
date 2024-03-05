@@ -43,8 +43,9 @@ public class PostgresUtils {
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setString(1, dukeId);
 			ps.setString(2, email);
-			ps.setBoolean(3, true);
-			ps.setString(4, "postgres"); // created_by
+			ps.setBoolean(3, false); // send_email
+			ps.setBoolean(4, true); // active
+			ps.setString(5, "postgres"); // created_by
 
 			Integer id = service.insert(connection, ps);
 			return id;
